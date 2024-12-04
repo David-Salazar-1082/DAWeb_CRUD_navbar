@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+{% load static %}
+<div class="row"><!-- la fila-->
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!--Columna izquierda-->
+
+<h1> Ingresar <h1>
+  <div class="card"><!-- La tarjeta-->
+    <div class="card-body">
+      <form action="registrarProducto/" method="POST">{% csrf_token %}<!-- falta action-->
+        <div class="form-group">
+          <input type="text" id="txtid" name="txtid" class='form-control' placeholder="Id Producto" minlength="1" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtnombre" name="txtnombre"  class='form-control' placeholder="Nombre" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtmarca" name="txtmarca"  class='form-control' placeholder="Marca" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtprecio" name="txtprecio"  class='form-control' placeholder="Precio" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtcantidad" name="txtcantidad"  class='form-control' placeholder="Cantidad" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtproovedor" name="txtproovedor"  class='form-control' placeholder="Proovedor" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtcategoria" name="txtcategoria"  class='form-control' placeholder="Categoria" maxlength="100" required>
+        </div>
+        <div class="form-group py-2">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div><!-- La tarjeta-->
+
+</div> <!--Columna izquierda-->
+
+
+<div class="col-sm-12 col-md-8 col-lg-8 col-xl-8"><!-- Columna derecha -->
+  <h1> Listado de Productos </h1>
+  <img class="w-59" src="{% static '/img/Productos.jpg' %}" alt="nava" width="500" height="200">
+  <!-- La tabla -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id_Producto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Proovedor</th>
+        <th scope="col">Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for m in productos %}
+<tr>
+  <td> {{forloop.counter}}</td>
+  <td> {{m.Id_Producto}}</td>
+  <td> {{m.nombre}}</td>
+  <td> {{m.marca}}</td>
+  <td> {{m.precio}}</td>
+  <td> {{m.cantidad}}</td>
+  <td> {{m.proovedor}}</td>
+  <td> {{m.categoria}}</td>
+
+  <td><a href="seleccionarProducto/{{m.Id_Producto}}" class="btn btn-info">Editar</a></td><!--Falta-->
+  <td><a href="borrarProducto/{{m.Id_Producto}}" class="btn btn-danger">Borrar</a></td><!--Falta-->
+</tr>
+    
+    
+    
+    
+    {% endfor %}
+
+    {% endblock %}
+    </tbody>
+      </table>
+  <!-- La tabla -->
+</div><!-- Columna derecha -->
+
+</div><!-- La fila -->
