@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block cuerpo %} 
+
+<div class="row"> <!-- fila en editar -->
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar Proovedor</h2>
+        <!-- Aqui codigo tarjeta -->
+        <div class="card"><!-- La tarjeta -->
+            <div class="card-body">
+                <form action="/editarProovedor/" method="POST"> {% csrf_token %} <!-- Falta accion -->
+                    <div class="form-group">
+                        <input type="text" id="txtid" name="txtid" class="form-control" 
+                        value="{{misproovedores.Id_Proovedor}}" minlength="1" maxlength="6" readonly required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
+                        value="{{misproovedores.nombre}}" maxlength="100" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" id="txttipoproducto" name="txttipoproducto" class="form-control" 
+                        min="1" max="9" value="{{misproovedores.tipo_producto}}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" id="txtubicacion" name="txtubicacion" class="form-control" 
+                        min="1" max="9" value="{{misproovedores.ubicacion}}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" id="txtcant_producto" name="txtcant_producto" class="form-control" 
+                        min="1" max="9" value="{{misproovedores.cant_producto}}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" id="txthorarios" name="txthorarios" class="form-control" 
+                        min="1" max="9" value="{{misproovedores.horarios}}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" id="txttelefono" name="txttelefono" class="form-control" 
+                        min="1" max="9" value="{{misproovedores.telefono}}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- La tarjeta -->
+        <!-- Aqui codigo tarjeta -->
+    </div>
+
+</div> <!-- fila en editar -->
+
+{% endblock %}
