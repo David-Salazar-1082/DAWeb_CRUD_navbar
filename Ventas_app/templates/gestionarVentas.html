@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+{% load static  %}
+<div class="row"><!-- la fila-->
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!--Columna izquierda-->
+
+<h1> Ingresar <h1>
+  <div class="card"><!-- La tarjeta-->
+    <div class="card-body">
+      <form action="registrarVenta/" method="POST">{% csrf_token %}<!-- falta action-->
+        <div class="form-group">
+          <input type="text" id="txtid" name="txtid" class='form-control' placeholder="Id Venta" minlength="1" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txttotal" name="txttotal"  class='form-control' placeholder="Total" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="date" id="txtfecha" name="txtfecha"  class='form-control' placeholder="Fecha" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtide" name="txtide"  class='form-control' placeholder="Id Empleado" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtidc" name="txtidc"  class='form-control' placeholder="Id Cliente" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtids" name="txtids"  class='form-control' placeholder="Id Sucursal" maxlength="100" required>
+        </div>
+        <div class="form-group py-3">
+          <input type="text" id="txtproductos_comprados" name="txtproductos_comprados"  class='form-control' placeholder="Productos Comprados" maxlength="100" required>
+        </div>
+        <div class="form-group py-2">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div><!-- La tarjeta-->
+
+</div> <!--Columna izquierda-->
+
+<div class="col-sm-12 col-md-8 col-lg-8 col-xl-8"><!-- Columna derecha -->
+  <h1> Listado de Ventas </h1>
+  <img class="w-59" src="{% static '/img/Ventas.jpg' %}" alt="nava" width="500" height="200">
+  <!-- La tabla -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id_Venta</th>
+        <th scope="col">Total</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Id Empleado</th>
+        <th scope="col">Id Cliente</th>
+        <th scope="col">Id Sucursal</th>
+        <th scope="col">Productos Comprados</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in ventas %}
+<tr>
+  <td> {{forloop.counter}}</td>
+  <td> {{v.Id_Venta}}</td>
+  <td> {{v.total}}</td>
+  <td> {{v.fecha}}</td>
+  <td> {{v.Id_Empleado}}</td>
+  <td> {{v.Id_Cliente}}</td>
+  <td> {{v.Id_Sucursal}}</td>
+  <td> {{v.Productos_Comprados}}</td>
+
+  <td><a href="seleccionarVenta/{{v.Id_Venta}}" class="btn btn-info">Editar</a></td><!--Falta-->
+  <td><a href="borrarVenta/{{v.Id_Venta}}" class="btn btn-danger">Borrar</a></td><!--Falta-->
+</tr>
+    
+    
+    
+    
+    {% endfor %}
+
+    {% endblock %}
+    </tbody>
+      </table>
+  <!-- La tabla -->
+</div><!-- Columna derecha -->
+
+</div><!-- La fila -->
