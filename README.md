@@ -13,8 +13,9 @@ CRUD de varias app de venta de pc y accesorios en Django Python
 - ![image](https://github.com/user-attachments/assets/815a3cc2-1ff3-4206-baf0-5de9532c5a97)
 
 - Productos
-- ![image](https://github.com/user-attachments/assets/96f719de-18d9-4dd1-a0e8-4e505bd12052)
-- ![image](https://github.com/user-attachments/assets/c7ddeec6-5846-46a8-8e9f-57e07a4ecc47)
+- ![image](https://github.com/user-attachments/assets/ed2c948f-3209-4c8e-a75f-84d5a5723d72)
+- ![image](https://github.com/user-attachments/assets/56e266b2-301b-4f31-8678-ac2b72e3f272)
+
   
 - Sucursales
 - ![image](https://github.com/user-attachments/assets/18d94286-c5b1-4169-bd14-32e2e4415b82)
@@ -25,5 +26,6 @@ CRUD de varias app de venta de pc y accesorios en Django Python
 - ![image](https://github.com/user-attachments/assets/9675748f-c9f3-44ee-8696-15999acc7265)
 
 - Ventas
-- ![image](https://github.com/user-attachments/assets/2d36d831-1f88-4b51-aac6-0a16fc92fe39)
-- ![image](https://github.com/user-attachments/assets/d6295ad4-85c8-4312-8e3d-585875f093c5)
+- ![image](https://github.com/user-attachments/assets/3282864b-8d45-408c-8e0c-72189ab919b1)
+- ![image](https://github.com/user-attachments/assets/4779d0da-9039-4130-8e23-def41755b060)
+
