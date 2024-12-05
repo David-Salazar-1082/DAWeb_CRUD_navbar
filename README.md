@@ -10,7 +10,8 @@ CRUD de varias app de venta de pc y accesorios en Django Python
 
 - Clientes
 - ![image](https://github.com/user-attachments/assets/5111e32e-5e83-4027-a61b-d736430706ef)
-- ![image](https://github.com/user-attachments/assets/815a3cc2-1ff3-4206-baf0-5de9532c5a97)
+- ![image](https://github.com/user-attachments/assets/a65041b8-6580-4cda-99f7-4082ee487ea1)
+
 
 - Productos
 - ![image](https://github.com/user-attachments/assets/ed2c948f-3209-4c8e-a75f-84d5a5723d72)
